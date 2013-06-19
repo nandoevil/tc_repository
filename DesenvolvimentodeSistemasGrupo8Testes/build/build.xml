@@ -1,0 +1,60 @@
+<project name="DesenvolvimentoSistemasGrupo8Testes" default="release-build" basedir="..">
+
+	<description>
+	Desenvolvimento de Sistemas Grupo 8 Testes Build file.
+	</description>
+
+	<target name="clean" description="clean up">
+		<delete dir="${bin}" />
+		<delete dir="${dist}" />
+		<delete dir="${reports}" />
+	</target>
+
+	<property name="src" location="src" />
+	<property name="build" location="build" />
+	<property name="dist" location="dist" />
+	<property name="lib" location="lib" />
+	<property name="bin" location="bin" />
+	<property name="reports" location="reports" />
+
+	<target name="init" depends="clean">
+		<mkdir dir="${bin}" />
+		<mkdir dir="${dist}" />
+	</target>
+
+	<target name="compile" depends="init" description="compile the source ">
+		<javac srcdir="${src}" destdir="${bin}" includeantruntime="false" classpath="${lib}/junit-4.11-beta-1.jar" />
+	</target>
+
+	<target name="dist" depends="compile" description="generate the distribution">
+
+		<jar destfile="${dist}/dsg8testes.jar" basedir="${bin}">
+			<manifest>
+				<attribute name="Main-Class" value="com.dsg8.testes.AppTest" />
+			</manifest>
+		</jar>
+
+	</target>
+
+	<target name="release-build" depends="dist" description="release the build">
+	
+	</target>
+	
+	<target name="run-tests" depends="release-build">
+		<mkdir dir="${reports}" />
+		<junit fork="yes" printsummary="yes">
+			<formatter type="xml" />
+			<classpath>
+				<path location="${bin}" />
+				<fileset dir="${lib}">
+					<include name="junit-4.11-beta-1.jar" />
+				</fileset>
+			</classpath>
+			<batchtest todir="${reports}">
+				<fileset dir="${bin}">
+					<include name="**/AppTest.class" />
+				</fileset>
+			</batchtest>
+		</junit>
+	</target>
+</project>

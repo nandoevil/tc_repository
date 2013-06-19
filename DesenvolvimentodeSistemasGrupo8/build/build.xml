@@ -1,0 +1,63 @@
+<project name="DesenvolvimentoSistemasGrupo8" default="release-build" basedir="..">
+
+	<description>
+	Desenvolvimento de Sistemas Grupo 8 Build file.
+	</description>
+
+	<target name="clean" description="clean up">
+		<delete dir="${bin.dir}" />
+		<delete dir="${dist.dir}" />
+	</target>
+
+	<property name="src.dir" location="src" />
+	<property name="build.dir" location="build" />
+	<property name="dist.dir" location="dist" />
+	<property name="lib.dir" location="lib" />
+	<property name="bin.dir" location="bin" />
+	<property name="rcs.dir" location="resources" />
+
+	<path id="build.classpath">
+		<fileset dir="${lib.dir}"/>
+	</path>
+	
+	<path id="rcs.classpath">
+		<fileset dir="${rcs.dir}"/>
+	</path>
+
+	<target name="init" depends="clean">
+		<mkdir dir="${bin.dir}" />
+		<mkdir dir="${dist.dir}" />
+	</target>
+
+	<target name="compile" depends="init" description="compile the source ">
+		<javac srcdir="${src.dir}" destdir="${bin.dir}">
+			
+			<classpath refid="build.classpath"/>
+			<classpath refid="rcs.classpath"/>
+		</javac>
+	</target>
+
+	<target name="dist" depends="compile" description="generate the distribution">
+
+		<manifestclasspath property="jar.classpath" jarfile="${dist.dir}/dsg8.jar">
+			<classpath refid="build.classpath"/>	
+		</manifestclasspath>
+		
+		<jar destfile="${dist.dir}/dsg8.jar" basedir="${bin.dir}">
+			<manifest>
+				<attribute name="Main-Class" value="com.dsg8.view.App" />
+				<attribute name="Class-Path" value="${jar.classpath}"/>
+			</manifest>
+			<fileset dir="${rcs.dir}"/>
+		</jar>
+
+	</target>
+
+	<target name="release-build" depends="dist" description="release the build">
+	</target>
+
+	<target name="run" depends="release-build">
+		<java jar="${dist.dir}/dsg8.jar" fork="true">
+		</java>
+	</target>
+</project>
