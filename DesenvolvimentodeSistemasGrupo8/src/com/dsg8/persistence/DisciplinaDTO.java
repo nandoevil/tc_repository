@@ -1,6 +1,8 @@
 package com.dsg8.persistence;
 
-public class DisciplinaDTO {
+import java.io.Serializable;
+
+public class DisciplinaDTO implements Serializable {
 	
 	private Integer codigo;
 	private String nome;

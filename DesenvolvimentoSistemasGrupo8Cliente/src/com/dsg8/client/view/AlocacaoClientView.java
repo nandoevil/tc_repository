@@ -20,7 +20,7 @@ import com.dsg8.persistence.DisciplinaDTO;
 import com.dsg8.persistence.ProfessorDTO;
 import com.dsg8.persistence.TurmaDTO;
 
-public class AlocacaoWindow extends JFrame {
+public class AlocacaoClientView extends JFrame {
 
 	public JFrame frame;
 	private Client cliente;
@@ -43,7 +43,7 @@ public class AlocacaoWindow extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AlocacaoWindow window = new AlocacaoWindow();
+					AlocacaoClientView window = new AlocacaoClientView();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -55,7 +55,7 @@ public class AlocacaoWindow extends JFrame {
 	/**
 	 * Create the application.
 	 */
-	public AlocacaoWindow() {
+	public AlocacaoClientView() {
 		initialize();
 	}
 
@@ -86,7 +86,7 @@ public class AlocacaoWindow extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				if(textField.getText() != null && !"".equalsIgnoreCase(textField.getText())){
 					try{
-						//professorEscolhido = cliente.buscarProfessor(Long.parseLong(textField.getText()));
+						professorEscolhido = cliente.buscarProfessor(Long.parseLong(textField.getText()));
 						
 						//TESTE
 						ProfessorDTO pdto = new ProfessorDTO();

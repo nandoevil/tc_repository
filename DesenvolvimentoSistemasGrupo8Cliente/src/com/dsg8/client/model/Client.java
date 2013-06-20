@@ -16,44 +16,44 @@ import com.dsg8.service.ServiceInterface;
 public class Client {
 
 	private Registry registry;
-	ServiceInterface client;
+	ServiceInterface server;
 
 	public Client() throws RemoteException, NotBoundException {
 
 		registry = LocateRegistry.getRegistry("localhost");
-		client = (ServiceInterface) registry.lookup("AlocacaoProfessoresService");
+		server = (ServiceInterface) registry.lookup("AlocacaoProfessoresService");
 
 	}
 
 	public List<Professor> listaProfessoresSemAlocacaoCompleta() throws RemoteException {
 
-		return client.listaProfessoresSemAlocacaoCompleta();
+		return server.listaProfessoresSemAlocacaoCompleta();
 
 	}
 	public List<ProfessorDTO> listaProfessoresSemAlocacao() throws RemoteException {
 
-		return client.listaProfessoresSemAlocacao();
+		return server.listaProfessoresSemAlocacao();
 	}
 
 	public List<Professor> listaProfessoresAlocados() throws RemoteException {
 
-		return client.listaProfessoresAlocados();
+		return server.listaProfessoresAlocados();
 	}
 	
 	public boolean alocarProfessorTurmaDisciplina(AlocacaoDTO alocacaoDTO) throws RemoteException {
-		return client.alocarProfessorTurmaDisciplina(alocacaoDTO);
+		return server.alocarProfessorTurmaDisciplina(alocacaoDTO);
 	}
 	
 	public List<TurmaDTO> listarTurmas() throws RemoteException {
-		return client.listarTurmas();
+		return server.listarTurmas();
 	}
 
 	public List<DisciplinaDTO> listarDisciplina() throws RemoteException {
-		return client.listarDisciplina();
+		return server.listarDisciplina();
 	}
 	
 	public ProfessorDTO buscarProfessor(long codigo) throws RemoteException {
-		return client.buscarProfessor(codigo);
+		return server.buscarProfessor(codigo);
 	}
 	
 }

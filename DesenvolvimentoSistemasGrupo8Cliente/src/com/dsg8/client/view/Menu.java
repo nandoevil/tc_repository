@@ -46,7 +46,7 @@ public class Menu {
 		JButton btnAlocarProfessor = new JButton("Alocar Professor");
 		btnAlocarProfessor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new AlocacaoWindow().frame.setVisible(true);
+				new AlocacaoClientView().frame.setVisible(true);
 			}
 		});
 		frame.getContentPane().add(btnAlocarProfessor, BorderLayout.EAST);

@@ -2,7 +2,6 @@ package com.dsg8.service;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-import java.sql.SQLException;
 import java.util.List;
 
 import com.dsg8.model.Professor;

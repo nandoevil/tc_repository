@@ -1,6 +1,8 @@
 package com.dsg8.persistence;
 
-public class AlocacaoDTO {
+import java.io.Serializable;
+
+public class AlocacaoDTO implements Serializable {
 
 	private Integer codigoAlocacao;
 	private Integer codigoProfessor;

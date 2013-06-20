@@ -1,6 +1,8 @@
 package com.dsg8.persistence;
 
-public class ProfessorDTO {
+import java.io.Serializable;
+
+public class ProfessorDTO implements Serializable{
 	
 	private Integer codigo;
 	private String nome;
@@ -21,6 +23,4 @@ public class ProfessorDTO {
 		this.nome = nome;
 	}
 	
-
-
 }

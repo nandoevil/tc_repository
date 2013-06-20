@@ -1,5 +1,6 @@
 package com.dsg8.persistence;
 
+import java.io.Serializable;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -7,7 +8,7 @@ import java.util.List;
 
 import com.dsg8.database.DerbyConnection;
 
-public class AlocacaoDAO {
+public class AlocacaoDAO implements Serializable{
 	
 	
 	DerbyConnection dc = null;

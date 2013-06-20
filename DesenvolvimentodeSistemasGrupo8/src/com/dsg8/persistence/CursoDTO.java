@@ -1,6 +1,8 @@
 package com.dsg8.persistence;
 
-public class CursoDTO {
+import java.io.Serializable;
+
+public class CursoDTO implements Serializable {
 	
 	private Integer codigo;
 	private String nome;

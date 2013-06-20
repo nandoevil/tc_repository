@@ -1,6 +1,8 @@
 package com.dsg8.persistence;
 
-public class TurmaDTO {
+import java.io.Serializable;
+
+public class TurmaDTO implements Serializable{
 	
 	private Integer codigo;
 	private String nome;

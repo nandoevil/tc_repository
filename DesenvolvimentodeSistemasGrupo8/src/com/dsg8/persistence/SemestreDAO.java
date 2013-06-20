@@ -1,5 +1,7 @@
 package com.dsg8.persistence;
 
-public class SemestreDAO {
+import java.io.Serializable;
+
+public class SemestreDAO implements Serializable{
 
 }

@@ -17,9 +17,8 @@ import com.dsg8.persistence.TurmaDTO;
 
 public class ServiceImpl  extends UnicastRemoteObject implements ServiceInterface{
 
-	protected ServiceImpl() throws RemoteException {
-		super();
-	
+	public ServiceImpl() throws RemoteException {
+
 	}
 
 	@Override

@@ -1,6 +1,8 @@
 package com.dsg8.persistence;
 
-public class SemestreDTO {
+import java.io.Serializable;
+
+public class SemestreDTO implements Serializable{
 	
 	private String descricao;
 
