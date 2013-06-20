@@ -30,7 +30,7 @@ public class DerbyConnection {
 	public boolean createConnection() throws SQLException, ClassNotFoundException{
 
 		this.driver = "org.apache.derby.jdbc.ClientDriver";
-		this.connectionURL = "jdbc:derby:c:\\derbydatabase\\dsg8;create=true";
+		this.connectionURL = "jdbc:derby:c:\\DerbyDatabase\\dsg8;create=true";
 		Class.forName(driver);
 		conn = DriverManager.getConnection(connectionURL);
 		if(conn!= null)
