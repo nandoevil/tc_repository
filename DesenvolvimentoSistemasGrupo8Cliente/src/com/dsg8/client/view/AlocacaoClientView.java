@@ -89,10 +89,10 @@ public class AlocacaoClientView extends JFrame {
 						professorEscolhido = cliente.buscarProfessor(Long.parseLong(textField.getText()));
 						
 						//TESTE
-						ProfessorDTO pdto = new ProfessorDTO();
+						/*ProfessorDTO pdto = new ProfessorDTO();
 						pdto.setCodigo(1);
 						pdto.setNome("Professor");
-						professorEscolhido = pdto;
+						professorEscolhido = pdto;*/
 						
 						listP.add(professorEscolhido);
 						
@@ -107,12 +107,12 @@ public class AlocacaoClientView extends JFrame {
 						//listT = cliente.listarTurmas();
 						
 						//TESTE
-						listT = new ArrayList<TurmaDTO>();
+						/*listT = new ArrayList<TurmaDTO>();
 						
 						TurmaDTO tdto = new TurmaDTO();
 						tdto.setCodigo(1);
 						tdto.setNome("Turma");
-						listT.add(tdto);
+						listT.add(tdto);*/
 						
 						if(listT != null && listT.size() > 0){
 							for (TurmaDTO t : listT) {
@@ -125,12 +125,12 @@ public class AlocacaoClientView extends JFrame {
 						//listD = cliente.listarDisciplina();
 						
 						//TESTE
-						listD = new ArrayList<DisciplinaDTO>();
+						/*listD = new ArrayList<DisciplinaDTO>();
 						
 						DisciplinaDTO ddto = new DisciplinaDTO();
 						ddto.setCodigo(1);
 						ddto.setNome("Disciplina");
-						listD.add(ddto);
+						listD.add(ddto);*/
 						
 						if(listD != null && listD.size() > 0){
 							for (DisciplinaDTO d : listD) {
